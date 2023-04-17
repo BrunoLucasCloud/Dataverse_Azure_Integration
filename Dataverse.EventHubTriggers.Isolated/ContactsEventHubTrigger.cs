@@ -1,6 +1,8 @@
 using System;
 using Microsoft.Azure.Functions.Worker;
 using Microsoft.Extensions.Logging;
+using Dataverse.EventHubTriggers.Isolated.Service;
+using Azure.Messaging.EventHubs;
 
 namespace Dataverse.EventHubTriggers.Isolated
 {
@@ -14,9 +16,16 @@ namespace Dataverse.EventHubTriggers.Isolated
         }
 
         [Function("PullFromContactEntity")]
-        public void Run([EventHubTrigger("samples-workitems", Connection = "")] string[] input)
+        public async Task Run([EventHubTrigger("samples-workitems", Connection = "")] EventData[] events, AccountService accountService)
         {
-            _logger.LogInformation($"First Event Hubs triggered message: {input[0]}");
+
+            foreach (EventData eventData in events)
+            {
+                await accountService.CreateAccounts(eventData);
+
+            }
+
+            //_logger.LogInformation($"First Event Hubs triggered message: {input[0]}");
         }
     }
 }

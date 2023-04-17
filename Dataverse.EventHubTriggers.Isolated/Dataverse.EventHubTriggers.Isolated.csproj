@@ -7,9 +7,12 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
   <ItemGroup>
+    <PackageReference Include="Azure.Messaging.EventHubs" Version="5.9.0" />
     <PackageReference Include="Microsoft.Azure.Functions.Worker" Version="1.13.0" />
     <PackageReference Include="Microsoft.Azure.Functions.Worker.Extensions.EventHubs" Version="5.2.0" />
     <PackageReference Include="Microsoft.Azure.Functions.Worker.Sdk" Version="1.9.0" />
+    <PackageReference Include="Microsoft.PowerPlatform.Dataverse.Client" Version="1.0.39" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
   </ItemGroup>
   <ItemGroup>
     <None Update="host.json">
