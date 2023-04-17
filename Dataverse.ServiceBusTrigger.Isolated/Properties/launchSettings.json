@@ -1,0 +1,9 @@
+{
+  "profiles": {
+    "Dataverse.ServiceBusTrigger.Isolated": {
+      "commandName": "Project",
+      "commandLineArgs": "--port 7241",
+      "launchBrowser": false
+    }
+  }
+}
