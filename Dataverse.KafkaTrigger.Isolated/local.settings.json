@@ -1,0 +1,15 @@
+{
+    "IsEncrypted": false,
+  "Values": {
+    "AzureWebJobsStorage": "UseDevelopmentStorage=true",
+    "FUNCTIONS_WORKER_RUNTIME": "dotnet-isolated",
+    "BrokerList": "[YOUR KAFKA BROKER]",
+    "topic": "[YOUR KAFKA BROKER TOPIC]",
+    "ConfluentCloudUserName": "[YOUR KAFKA USER NAME]",
+    "ConfluentCloudPassword": "[YOUR KAFKA SECRET]",
+    "SecretValue": "[YOUR DATAVERSE SPN SECRET]",
+    "AppID": "[YOUR DATAVERSE SPN ID]",
+    "InstanceUri": "[YOUR DATAVERSE URL]"
+
+  }
+}

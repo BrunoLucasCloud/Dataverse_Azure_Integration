@@ -11,6 +11,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dataverse.FillServiceBus", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dataverse.KafkaTrigger.Isolated", "Dataverse.KafkaTrigger.Isolated\Dataverse.KafkaTrigger.Isolated.csproj", "{FD028381-88A0-454E-BCC3-C2672B0AFAB3}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dataverse.FillEventHub", "Dataverse.FillEventHub\Dataverse.FillEventHub.csproj", "{C9F8D3BF-EEAE-4705-85A9-3FFEEC1D8A3B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{FD028381-88A0-454E-BCC3-C2672B0AFAB3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FD028381-88A0-454E-BCC3-C2672B0AFAB3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FD028381-88A0-454E-BCC3-C2672B0AFAB3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C9F8D3BF-EEAE-4705-85A9-3FFEEC1D8A3B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C9F8D3BF-EEAE-4705-85A9-3FFEEC1D8A3B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C9F8D3BF-EEAE-4705-85A9-3FFEEC1D8A3B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C9F8D3BF-EEAE-4705-85A9-3FFEEC1D8A3B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
