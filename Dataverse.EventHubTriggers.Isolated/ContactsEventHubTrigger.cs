@@ -1,31 +1,28 @@
 using System;
 using Microsoft.Azure.Functions.Worker;
 using Microsoft.Extensions.Logging;
-using Dataverse.EventHubTriggers.Isolated.Service;
-using Azure.Messaging.EventHubs;
+using Dataverse.EventHubTriggers.Isolated.Service.Interface;
 
 namespace Dataverse.EventHubTriggers.Isolated
 {
     public class ContactsEventHubTrigger
     {
         private readonly ILogger _logger;
+        private readonly IAccountService _accountService;
 
-        public ContactsEventHubTrigger(ILoggerFactory loggerFactory)
+        public ContactsEventHubTrigger(ILoggerFactory loggerFactory, IAccountService accountService)
         {
             _logger = loggerFactory.CreateLogger<ContactsEventHubTrigger>();
+            _accountService = accountService;
         }
 
         [Function("PullFromContactEntity")]
-        public async Task Run([EventHubTrigger("samples-workitems", Connection = "")] EventData[] events, AccountService accountService)
+        public async Task Run([EventHubTrigger("contacts", Connection = "conn")] string[] events, ILogger log)
         {
-
-            foreach (EventData eventData in events)
+            foreach (string eventData in events)
             {
-                await accountService.CreateAccounts(eventData);
-
-            }
-
-            //_logger.LogInformation($"First Event Hubs triggered message: {input[0]}");
+                await _accountService.CreateAccounts(eventData);
+            }            
         }
     }
 }

@@ -1,12 +1,11 @@
-﻿using Dataverse.EventHubTriggers.Isolated.Service.Interface;
-using Dataverse.EventHubTriggers.Isolated.Model;
+﻿using Dataverse.KafkaTrigger.Isolated.Service.Interface;
+using Dataverse.KafkaTrigger.Isolated.Model;
 using Newtonsoft.Json;
 using Microsoft.PowerPlatform.Dataverse.Client;
 using Microsoft.Xrm.Sdk;
-using Microsoft.Extensions.Logging;
-using Azure.Messaging.EventHubs;
 
-namespace Dataverse.EventHubTriggers.Isolated.Service
+
+namespace Dataverse.KafkaTrigger.Isolated.Service
 {
     public class AccountService : IAccountService
     {

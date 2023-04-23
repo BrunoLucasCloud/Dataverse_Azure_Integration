@@ -26,7 +26,7 @@ class Program
                 TransportType = ServiceBusTransportType.AmqpWebSockets
             };
 
-            client = new ServiceBusClient("Endpoint=sb://sb-testforduplicate-2023.servicebus.windows.net/;SharedAccessKeyName=main;SharedAccessKey=MCGj+GMxAOXBJfVUCNYBs81YuWmbGiAhQ+ASbHjXgJU=;EntityPath=accounts");
+            client = new ServiceBusClient("Endpoint=sb://sb-ssas-integration-demo.servicebus.windows.net/;SharedAccessKeyName=main;SharedAccessKey=XY3E3ZK+AEtmDyvJdRboDvgi49za9rS04+ASbGqZgtM=;EntityPath=accounts");
             sender = client.CreateSender("accounts");
 
             // create a batch 
@@ -36,8 +36,8 @@ class Program
             {
                 var account = new account
                 {
-                    name = "xxxe" + i,
-                    accountnumber = "yyyye" + i
+                    name = "yyy" + i,
+                    accountnumber = "yyy" + i
                 };
 
                 string jsonString = JsonSerializer.Serialize(account);
@@ -81,9 +81,9 @@ class Program
 class account
 {
 
-    public string name { get; set; }
+    public string? name { get; set; }
 
-    public string accountnumber { get; set; }
+    public string? accountnumber { get; set; }
 
 
 }

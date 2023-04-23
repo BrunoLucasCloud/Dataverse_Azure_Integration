@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Dataverse.EventHubTriggers.Isolated.Model
+namespace Dataverse.ServiceBusTrigger.Isolated.Model
 {
     public class Account
     {

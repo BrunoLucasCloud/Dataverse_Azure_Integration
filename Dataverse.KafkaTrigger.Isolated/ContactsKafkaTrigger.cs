@@ -2,22 +2,24 @@
 using System;
 using Microsoft.Azure.Functions.Worker;
 using Microsoft.Extensions.Logging;
-using Microsoft.Azure.Functions.Worker.Http;
 using Newtonsoft.Json.Linq;
+using Dataverse.KafkaTrigger.Isolated.Service.Interface;
 
 namespace Dataverse.KafkaTrigger.Isolated
 {
-    public class Function1
+    public class ContactsKafkaTrigger
     {
         private readonly ILogger _logger;
+        private readonly IAccountService _accountService;
 
-        public Function1(ILoggerFactory loggerFactory)
+        public ContactsKafkaTrigger(ILoggerFactory loggerFactory, IAccountService accountService)
         {
-            _logger = loggerFactory.CreateLogger<Function1>();
+            _logger = loggerFactory.CreateLogger<ContactsKafkaTrigger>();
+            _accountService = accountService;
         }
 
         [Function("KafkaTrigger")]
-        public static void Run(
+        public async Task Run(
              [KafkaTrigger("BrokerList",
                           "topic",
                           Username = "ConfluentCloudUserName",
@@ -28,6 +30,7 @@ namespace Dataverse.KafkaTrigger.Isolated
         {
             var logger = context.GetLogger("KafkaFunction");
             logger.LogInformation($"C# Kafka trigger function processed a message: {JObject.Parse(eventData)["Value"]}");
+            await _accountService.CreateAccounts(eventData);
         }
     }
 }
