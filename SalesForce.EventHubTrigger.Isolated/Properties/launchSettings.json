@@ -1,9 +1,0 @@
-{
-  "profiles": {
-    "SalesForce.EventHubTrigger.Isolated": {
-      "commandName": "Project",
-      "commandLineArgs": "--port 7094",
-      "launchBrowser": false
-    }
-  }
-}
