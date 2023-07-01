@@ -3,12 +3,19 @@ using System;
 using Azure.Messaging.ServiceBus;
 using System.Text.Json;
 using System.Text.Json.Serialization;
+using Microsoft.Extensions.Configuration;
+
 class Program
 {
 
-
     static async Task Main(string[] args)
     {
+        var builder = new ConfigurationBuilder();
+        builder.SetBasePath(Directory.GetCurrentDirectory())
+               .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true);
+        
+        IConfiguration AppSettings = builder.Build();
+
         ServiceBusClient client;
         ServiceBusSender sender;
         const int numOfMessages = 3000;
@@ -26,7 +33,8 @@ class Program
                 TransportType = ServiceBusTransportType.AmqpWebSockets
             };
 
-            client = new ServiceBusClient("Endpoint=sb://sb-ssas-integration-demo.servicebus.windows.net/;SharedAccessKeyName=main;SharedAccessKey=XY3E3ZK+AEtmDyvJdRboDvgi49za9rS04+ASbGqZgtM=;EntityPath=accounts");
+            client = new ServiceBusClient(AppSettings["ConnectionString:conn"]);
+);
             sender = client.CreateSender("accounts");
 
             // create a batch 

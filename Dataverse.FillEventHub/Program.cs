@@ -3,6 +3,7 @@ using Azure.Messaging.EventHubs.Producer;
 using System.Text;
 using System.Text.Json;
 using System.Text.Json.Serialization;
+using Microsoft.Extensions.Configuration;
 
 class Program
 {
@@ -10,6 +11,11 @@ class Program
 
     static async Task Main(string[] args)
     {
+        var builder = new ConfigurationBuilder();
+        builder.SetBasePath(Directory.GetCurrentDirectory())
+               .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true);
+
+        IConfiguration AppSettings = builder.Build();
 
         const int numOfMessages = 10;
 
@@ -22,7 +28,7 @@ class Program
         {
 
             // create a batch 
-            EventHubProducerClient producerClient = new EventHubProducerClient("Endpoint=sb://eh-blucas-test.servicebus.windows.net/;SharedAccessKeyName=main;SharedAccessKey=hBI6MUVcQlA4F+C6Ip579BiAGsMHcPoFwg1FMzBveDE=;EntityPath=contacts");
+            EventHubProducerClient producerClient = new EventHubProducerClient(AppSettings["ConnectionString:conn"]);
 
 
 
