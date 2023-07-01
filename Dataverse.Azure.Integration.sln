@@ -13,7 +13,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dataverse.KafkaTrigger.Isol
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dataverse.FillEventHub", "Dataverse.FillEventHub\Dataverse.FillEventHub.csproj", "{C9F8D3BF-EEAE-4705-85A9-3FFEEC1D8A3B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SalesForce.EventHubTrigger.Isolated", "SalesForce.EventHubTrigger.Isolated\SalesForce.EventHubTrigger.Isolated.csproj", "{4BF3E9C8-1CA1-4292-923E-2B583C008B90}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SalesForce.EventHubTrigger.Isolated", "SalesForce.EventHubTrigger.Isolated\SalesForce.EventHubTrigger.Isolated.csproj", "{4BF3E9C8-1CA1-4292-923E-2B583C008B90}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SalesForce.ServiceBusTrigger.Isolated", "SalesForce.ServiceBusTrigger.Isolated\SalesForce.ServiceBusTrigger.Isolated.csproj", "{98CB3295-AE92-42E7-8592-A5AB5B04A591}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dataverse.Confluent.Consumer.Net", "Dataverse.Confluent.Consumer.Net\Dataverse.Confluent.Consumer.Net.csproj", "{13AEF33A-4606-47AC-B575-5FA002D9CB10}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dataverse.Confluent.Net", "Dataverse.Confluent.Net\Dataverse.Confluent.Net.csproj", "{6125D530-B7B4-4591-AEB1-DD3F81F52E64}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +51,18 @@ Global
 		{4BF3E9C8-1CA1-4292-923E-2B583C008B90}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4BF3E9C8-1CA1-4292-923E-2B583C008B90}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4BF3E9C8-1CA1-4292-923E-2B583C008B90}.Release|Any CPU.Build.0 = Release|Any CPU
+		{98CB3295-AE92-42E7-8592-A5AB5B04A591}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{98CB3295-AE92-42E7-8592-A5AB5B04A591}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{98CB3295-AE92-42E7-8592-A5AB5B04A591}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{98CB3295-AE92-42E7-8592-A5AB5B04A591}.Release|Any CPU.Build.0 = Release|Any CPU
+		{13AEF33A-4606-47AC-B575-5FA002D9CB10}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{13AEF33A-4606-47AC-B575-5FA002D9CB10}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{13AEF33A-4606-47AC-B575-5FA002D9CB10}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{13AEF33A-4606-47AC-B575-5FA002D9CB10}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6125D530-B7B4-4591-AEB1-DD3F81F52E64}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6125D530-B7B4-4591-AEB1-DD3F81F52E64}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6125D530-B7B4-4591-AEB1-DD3F81F52E64}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6125D530-B7B4-4591-AEB1-DD3F81F52E64}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
